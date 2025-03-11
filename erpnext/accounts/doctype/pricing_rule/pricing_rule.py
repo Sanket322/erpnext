@@ -433,7 +433,8 @@ def get_pricing_rule_for_item(args, doc=None, for_validate=False):
 
 	pricing_rules = (
 		get_applied_pricing_rules(args.get("pricing_rules"))
-		if for_validate and args.get("pricing_rules")
+		if (for_validate and args.get("pricing_rules"))
+		or frappe.flags.args.get("use_applied_pricing_rule_only")
 		else get_pricing_rules(args, doc)
 	)
 

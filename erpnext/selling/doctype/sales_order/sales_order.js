@@ -1124,6 +1124,7 @@ erpnext.selling.SalesOrderController = class SalesOrderController extends erpnex
 			args: {
 				delivery_dates,
 				for_reserved_stock: for_reserved_stock,
+				use_applied_pricing_rule_only: true,
 			},
 			freeze: true,
 			freeze_message: __("Creating Delivery Note ..."),
